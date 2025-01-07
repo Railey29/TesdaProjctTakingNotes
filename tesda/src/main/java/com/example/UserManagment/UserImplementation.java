@@ -8,7 +8,7 @@ import java.util.Scanner;
 import com.example.DataManagement.DataManagementImplementation;
 
 public class UserImplementation implements UserInterface {
-    private final Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
     @Override
     public List<String> getInputUserAllData() {
