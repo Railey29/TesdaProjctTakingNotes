@@ -2,6 +2,9 @@ package com.example.UserManagment;
 
 import java.util.Scanner;
 
+import com.example.DataManagement.DataManagementImplementation;
+import com.example.DataManagement.DataManagementInterface;
+
 public class DisplayChoices {
     Scanner input = new Scanner(System.in);
 
@@ -19,7 +22,8 @@ public class DisplayChoices {
             choice = input.nextInt();
             System.out.println("RESULT");
             clearConsole();
-            DisplayOperation display = new DisplayOperation(choice);
+            DisplayOperation display = new DisplayOperation(new DataManagementImplementation(),
+                    new UserImplementation(), choice);
             display.execute();
 
         }

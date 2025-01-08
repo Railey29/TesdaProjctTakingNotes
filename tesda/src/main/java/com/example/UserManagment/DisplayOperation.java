@@ -3,12 +3,13 @@ package com.example.UserManagment;
 import java.util.List;
 
 import com.example.DataManagement.DataManagementImplementation;
+import com.example.DataManagement.DataManagementInterface;
 
 public class DisplayOperation {
     private int choice;
     private User user;
-    DataManagementImplementation dataManagementInterface = new DataManagementImplementation();
-    UserInterface userInterface = new UserImplementation();
+    DataManagementInterface dataManagementInterface;
+    UserInterface userInterface;
 
     private void getAllData() {
         List<String> userInputAllData = userInterface.getInputUserAllData();
@@ -20,7 +21,8 @@ public class DisplayOperation {
         user = new User(userGetDate.get(0));
     }
 
-    public DisplayOperation(int choice) {
+    public DisplayOperation(DataManagementInterface dataManagementInterface, UserInterface userInterface,
+            int choice) {
         this.choice = choice;
     }
 
